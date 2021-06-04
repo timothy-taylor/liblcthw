@@ -42,58 +42,64 @@ error:
 static inline List *List_merge(List * left, List * right, List_compare cmp)
 {
     assert(left != NULL && right != NULL && "Lists cannot be null");
+    log_info("merging...");
     List *result = List_create();
     void *val = NULL;
+    int compared = 0;
 
-    log_info("Left count: %d, right count: %d", List_count(left), List_count(right));
     while (List_count(left) > 0 || List_count(right) > 0){
         if (List_count(left) > 0 && List_count(right) > 0 ){
-            log_info("merge compare running");
-            log_info("left: %s, right: %s", List_first(left), List_first(right));
-            if (cmp(List_first(left), List_first(right)) <= 0){
+            assert(left->first->value != NULL && right->first->value != NULL
+                    && "Values must not be null"); 
+            compared = cmp(List_first(left), List_first(right));
+            log_info("compare: %d", compared);
+            if (compared <= 0){
                 val = List_shift(left);
             } else {
+                log_info("here it is");
                 val = List_shift(right);
             }
-            
-            log_info("pushing");
+           
+            log_info("val = %s", val);
             List_push(result, val);
         } else if (List_count(left) > 0){
-            log_info("right is 0");
             val = List_shift(left);
+            log_info("val = %s", val);
             List_push(result, val);
         } else if (List_count(right) > 0){
-            log_info("left is 0");
             val = List_shift(right);
+            log_info("val = %s", val);
             List_push(result, val);
         }
     }
-
+    
+    log_info("returning results...");
     return result;
 }
 
 List *List_merge_sort(List * list, List_compare cmp)
 {
-    List *result = NULL;
-
     if (List_count(list) <= 1){
         return list;
     }
 
+    List *result = NULL;
     List *left = List_create();
     List *right = List_create();
-    int middle = List_count(list) / 2;
-
+    int mid = List_count(list) / 2;
+    int i = 0;
+    
     LIST_FOREACH(list, first, next, cur){
-        if (middle > 0){
+        if (i < mid){
             List_push(left, cur->value);
         } else {
             List_push(right, cur->value);
         }
-
-        middle--;
+        i++;
     }
 
+    log_info("left: %d: %s, right %d: %s", left->count, left->first->value,
+            right->count, right->first->value);
     List *sort_left = List_merge_sort(left, cmp);
     List *sort_right = List_merge_sort(right, cmp);
 
@@ -102,6 +108,8 @@ List *List_merge_sort(List * list, List_compare cmp)
     if (sort_right != right)
         List_destroy(right);
 
+    log_info("sort_left: %d: %s, sort_right %d: %s", sort_left->count, sort_left->first->value,
+            sort_right->count, sort_right->first->value);
     result = List_merge(sort_left, sort_right, cmp);
 
     List_destroy(sort_left);

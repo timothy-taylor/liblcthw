@@ -1,0 +1,86 @@
+DEBUG tests/bstrlib_tests.c:293: ----- RUNNING: ./tests/bstrlib_tests
+DEBUG tests/bstrlib_tests.c:273: 
+----- test_bfromcstr
+DEBUG tests/bstrlib_tests.c:274: 
+----- test_blk2bstr
+[INFO] (tests/bstrlib_tests.c:27) slen = 8, mlen = 16, size = 8
+DEBUG tests/bstrlib_tests.c:275: 
+----- test_bstrcpy
+DEBUG tests/bstrlib_tests.c:276: 
+----- test_bassign
+DEBUG tests/bstrlib_tests.c:277: 
+----- test_bassigncstr
+DEBUG tests/bstrlib_tests.c:278: 
+----- test_bassignblk
+DEBUG tests/bstrlib_tests.c:279: 
+----- test_bdestroy
+DEBUG tests/bstrlib_tests.c:280: 
+----- test_bconcat
+DEBUG tests/bstrlib_tests.c:281: 
+----- test_bstricmp
+DEBUG tests/bstrlib_tests.c:282: 
+----- test_binstr
+DEBUG tests/bstrlib_tests.c:283: 
+----- test_bfindreplace
+DEBUG tests/bstrlib_tests.c:284: 
+----- test_bsplit
+DEBUG tests/bstrlib_tests.c:285: 
+----- test_bformat
+DEBUG tests/bstrlib_tests.c:286: 
+----- test_blength
+DEBUG tests/bstrlib_tests.c:287: 
+----- test_bdata
+DEBUG tests/bstrlib_tests.c:288: 
+----- test_bchar
+DEBUG tests/darray_algos_tests.c:78: ----- RUNNING: ./tests/darray_algos_tests
+DEBUG tests/darray_algos_tests.c:71: 
+----- test_qsort
+DEBUG tests/darray_algos_tests.c:42: ---Testing qsort sorting algorithm
+DEBUG tests/darray_algos_tests.c:72: 
+----- test_heapsort
+DEBUG tests/darray_algos_tests.c:42: ---Testing heapsort sorting algorithm
+DEBUG tests/darray_algos_tests.c:73: 
+----- test_mergesort
+DEBUG tests/darray_algos_tests.c:42: ---Testing mergesort sorting algorithm
+DEBUG tests/darray_tests.c:127: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:115: 
+----- test_create
+DEBUG tests/darray_tests.c:116: 
+----- test_new
+DEBUG tests/darray_tests.c:117: 
+----- test_set
+DEBUG tests/darray_tests.c:118: 
+----- test_get
+DEBUG tests/darray_tests.c:119: 
+----- test_remove
+DEBUG tests/darray_tests.c:120: 
+----- test_expand_contract
+DEBUG tests/darray_tests.c:121: 
+----- test_push_pop
+DEBUG tests/darray_tests.c:122: 
+----- test_destroy
+DEBUG tests/list_algos_tests.c:87: ----- RUNNING: ./tests/list_algos_tests
+DEBUG tests/list_algos_tests.c:81: 
+----- test_bubble_sort
+DEBUG tests/list_tests.c:174: ----- RUNNING: ./tests/list_tests
+DEBUG tests/list_tests.c:161: 
+----- test_create
+DEBUG tests/list_tests.c:162: 
+----- test_push_pop
+DEBUG tests/list_tests.c:163: 
+----- test_unshift
+DEBUG tests/list_tests.c:164: 
+----- test_remove
+DEBUG tests/list_tests.c:165: 
+----- test_shift
+DEBUG tests/list_tests.c:166: 
+----- test_copy
+DEBUG tests/list_tests.c:167: 
+----- test_join
+DEBUG tests/list_tests.c:168: 
+----- test_split
+DEBUG tests/list_tests.c:169: 
+----- test_destroy
+DEBUG tests/radixmap_tests.c:102: ----- RUNNING: ./tests/radixmap_tests
+DEBUG tests/radixmap_tests.c:97: 
+----- test_operations
