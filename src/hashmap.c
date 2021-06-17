@@ -74,6 +74,20 @@ void Hashmap_destroy(Hashmap * map)
     }
 }
 
+static inline HashmapNode *Hashmap_node_create(int hash, void *key, void *data)
+{
+    HashmapNode *node = calloc(1, sizeof(HashmapNode));
+    check_mem(node);
+
+    node->key = key;
+    node->data = data;
+    node->hash = hash;
+
+    return node;
+error:
+    return NULL;
+}
+
 static inline DArray *Hashmap_find_bucket(Hashmap * map, void *key,
         int create, uint32_t * hash_out)
 {
@@ -148,7 +162,7 @@ error:
 
 int Hashmap_traverse(Hashmap *map, Hashmap_traverse_cb traverse_cb)
 {
-    int i 0;
+    int i = 0;
     int j = 0;
     int rc = 0;
 
@@ -168,7 +182,7 @@ int Hashmap_traverse(Hashmap *map, Hashmap_traverse_cb traverse_cb)
 
 void *Hashmap_delete(Hashmap * map, void *key)
 {
-    uint32-_t hash = 0;
+    uint32_t hash = 0;
     DArray *bucket = Hashmap_find_bucket(map, key, 0, &hash);
     if (!bucket)
         return NULL;

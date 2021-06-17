@@ -59,6 +59,28 @@ DEBUG tests/darray_tests.c:121:
 ----- test_push_pop
 DEBUG tests/darray_tests.c:122: 
 ----- test_destroy
+DEBUG tests/hashmap_tests.c:119: ----- RUNNING: ./tests/hashmap_tests
+DEBUG tests/hashmap_tests.c:110: 
+----- test_create
+DEBUG tests/hashmap_tests.c:111: 
+----- test_get_set
+DEBUG src/hashmap.c:137: try: 0
+DEBUG src/hashmap.c:137: try: 0
+DEBUG src/hashmap.c:137: try: 0
+DEBUG tests/hashmap_tests.c:112: 
+----- test_traverse
+DEBUG tests/hashmap_tests.c:17: Key: test data 3
+DEBUG tests/hashmap_tests.c:17: Key: test data 1
+DEBUG tests/hashmap_tests.c:17: Key: test data 2
+DEBUG tests/hashmap_tests.c:24: KEY: test data 3
+DEBUG tests/hashmap_tests.c:24: KEY: test data 1
+DEBUG tests/hashmap_tests.c:113: 
+----- test_delete
+DEBUG src/hashmap.c:137: try: 0
+DEBUG src/hashmap.c:137: try: 0
+DEBUG src/hashmap.c:137: try: 0
+DEBUG tests/hashmap_tests.c:114: 
+----- test_destroy
 DEBUG tests/list_algos_tests.c:87: ----- RUNNING: ./tests/list_algos_tests
 DEBUG tests/list_algos_tests.c:81: 
 ----- test_bubble_sort
